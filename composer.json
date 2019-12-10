@@ -1,5 +1,5 @@
 {
-    "name": "tsaiyihua/laravel-ecpay",
+    "name": "linkulife/laravel-ecpay",
     "description": "ecpay library for laravel",
     "type": "library",
     "keywords": ["payment", "ecpay", "laravel"],
