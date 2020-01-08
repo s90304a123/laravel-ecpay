@@ -34,9 +34,9 @@ class StringService
     static public function checkMacValueGenerator($data, $hashData=[])
     {
         if (empty($hashData)) {
-            $hashData['key'] = config('ecpay.HashKey');
-            $hashData['iv'] = config('ecpay.HashIV');
-            $hashData['type'] = 'sha256';
+//            $hashData['key'] = config('ecpay.HashKey');
+//            $hashData['iv'] = config('ecpay.HashIV');
+//            $hashData['type'] = 'sha256';
         }
         if (isset($hashData['ignore'])) {
             foreach($hashData['ignore'] as $field) {

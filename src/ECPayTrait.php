@@ -19,6 +19,8 @@ trait ECPayTrait
             'apiUrl' => $this->apiUrl,
             'postData' => $this->postData
         ];
+//        var_dump($data);
+//        exit();
         if (ECPay::$sendForm === null) {
             if (config('ecpay.SendForm') == null) {
                 return view('ecpay::send', $data);

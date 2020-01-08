@@ -35,10 +35,6 @@ class Checkout
             $this->apiUrl = 'https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5';
         }
         $this->postData = $checkoutPostCollection;
-
-        $this->merchantId = config('ecpay.MerchantId');
-        $this->hashKey = config('ecpay.HashKey');
-        $this->hashIv = config('ecpay.HashIV');
     }
 
     /**
@@ -53,6 +49,9 @@ class Checkout
         if ($validator->fails()) {
             throw new ECPayException($validator->getMessageBag());
         }
+        $this->merchantId = $data['MerchantId'];
+        $this->hashKey = $data['HashKey'];
+        $this->hashIv = $data['HashIV'];
         $this->postData->setData($data)->setBasicInfo()->setOrderInfo()->setOptionalInfo()->optimize();
         return $this;
     }
